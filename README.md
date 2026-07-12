@@ -44,6 +44,13 @@ export default defineConfig([
 
 ```
 
+## GitHub Pages
+
+This app builds with relative asset URLs, so the generated `dist` folder can be published directly to GitHub Pages.
+
+1. Run `npm run build` from the `port` folder.
+2. Publish the generated `dist` directory to your repository's Pages source.
+
 You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
 
 ```js
