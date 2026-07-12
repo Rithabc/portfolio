@@ -1,0 +1,33 @@
+@import "tailwindcss";
+@plugin "daisyui"{
+ themes: light --default, dark --prefersdark,autumn;
+}
+
+.main-padding {
+  padding: 0 15rem;
+}
+
+.model-section {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+.model-card {
+  height: 32rem;
+  width: 100%;
+  overflow: hidden;
+  border-radius: 1.5rem;
+}
+
+.three-canvas-host {
+  height: 100%;
+  width: 100%;
+  cursor: grab;
+  touch-action: none;
+}
+
+.three-canvas-host canvas {
+  display: block;
+  height: 100% !important;
+  width: 100% !important;
+}
