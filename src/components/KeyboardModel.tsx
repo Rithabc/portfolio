@@ -43,7 +43,7 @@ function KeyboardModel() {
     const loader = new GLTFLoader()
     let isDisposed = false
 
-    loader.load('/custom_-_mechanical_keyboard.glb', (gltf: any) => {
+    loader.load(`${import.meta.env.BASE_URL}custom_-_mechanical_keyboard.glb`, (gltf: any) => {
       if (isDisposed) {
         return
       }
