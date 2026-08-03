@@ -1,0 +1,39 @@
+[
+  {
+    "slug": "ats-screener",
+    "title": "ATS Screener",
+    "year": "2026",
+    "status": "Actively maintained",
+    "kicker": "Your resume vs. enterprise ATS engines",
+    "summary": "A free, open-source resume scanner that shows how different ATS engines parse, filter, and score a resume.",
+    "description": "A polished project-page template for future portfolio entries. The content is structured so each section can be expanded later without changing the layout.",
+    "primaryLink": {
+      "label": "Live",
+      "href": "#"
+    },
+    "secondaryLink": {
+      "label": "Source",
+      "href": "#"
+    },
+    "thirdLink": {
+      "label": "Docs",
+      "href": "#"
+    },
+    "stats": [
+      { "value": "2,739", "label": "users served" },
+      { "value": "6", "label": "real ATS engines" }
+    ],
+    "previewImage": "hero",
+    "previewAlt": "ATS Screener project preview",
+    "sections": [
+      {
+        "title": "Overview",
+        "body": "Swap this text later with the full story, architecture, and outcome metrics for the project."
+      },
+      {
+        "title": "What to add later",
+        "body": "Features, stack, screenshots, lessons learned, links, and deployment notes can all live in this JSON record."
+      }
+    ]
+  }
+]

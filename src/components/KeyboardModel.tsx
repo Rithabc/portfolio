@@ -15,7 +15,7 @@ function KeyboardModel() {
     const scene = new THREE.Scene()
 
     const camera = new THREE.PerspectiveCamera(38, 1, 0.1, 100)
-    camera.position.set(-2.6, 3.9, 2.6)
+    camera.position.set(2.6, 3.0, 2.6)
     camera.lookAt(0, 0, 0)
 
     const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true })
@@ -30,11 +30,8 @@ function KeyboardModel() {
     const fillLight = new THREE.PointLight(0xffd7a8, 0.9)
     fillLight.position.set(-3, 2, -2)
     const modelRoot = new THREE.Group()
-    const idleRotation = { y: 0 }
     const dragRotation = { y: 0 }
-    const targetPosition = { y: 0 }
     const pointerState = { active: false, x: 0, y: 0 }
-    const clock = new THREE.Clock()
 
     scene.add(ambientLight, keyLight, fillLight, modelRoot)
     modelRoot.rotation.x = -0.18
@@ -104,12 +101,8 @@ function KeyboardModel() {
     let frameId = 0
 
     const render = () => {
-      const elapsed = clock.getElapsedTime()
-
-      idleRotation.y += 0.0006
-      modelRoot.rotation.x = -0.18
-      modelRoot.rotation.y = idleRotation.y + dragRotation.y
-      modelRoot.position.y = Math.sin(elapsed * 1.2) * 0.04 + targetPosition.y
+      modelRoot.rotation.x = 0
+      modelRoot.rotation.y = 0.65 + dragRotation.y
 
       renderer.render(scene, camera)
       frameId = window.requestAnimationFrame(render)
