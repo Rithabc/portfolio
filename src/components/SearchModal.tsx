@@ -1,5 +1,6 @@
 import { useEffect, useMemo, useRef, useState } from 'react'
 import { Link } from 'react-router-dom'
+import projectList from '../data/projects.json'
 
 type PaletteItem = {
   label: string
@@ -21,9 +22,11 @@ function SearchModal() {
     { label: 'Contact', href: '/#contact' },
   ], [])
 
-  const projectItems = useMemo<PaletteItem[]>(() => [
-    { label: 'ATS Screener', href: '/projects/ats-screener', hint: 'Project' },
-  ], [])
+  const projectItems = useMemo<PaletteItem[]>(() => projectList.map((project) => ({
+    label: project.title,
+    href: `/projects/${project.slug}`,
+    hint: 'Project',
+  })), [])
 
   const openModal = () => {
     dialogRef.current?.showModal()

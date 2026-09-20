@@ -2,51 +2,18 @@ import '../App.css'
 import { type ReactNode } from 'react'
 import { motion } from 'motion/react'
 import readersCircleImage from '../assets/readers-circle.png'
+import projectList from '../data/projects.json'
 
-const projects = [
-  {
-    title: 'The Reader’s Circle',
-    type: 'Java Full Stack',
-    stack: 'Java, Spring Boot, Spring Cloud, MySQL, React, TypeScript',
-    liveLink: 'https://the-reader-s-circle.onrender.com/home',
-    githubLink: 'https://github.com/Rithabc/The-Reader-s-Circle',
-    repoLabel: 'Github',
-    description:
-      'A collaborative reading platform that helps users discover books, track reading activity, and connect through reviews, posts, and personal shelves.'
-  },
-  {
-    title: 'Voice Cloning for ALS Patients',
-    type: 'Machine Learning',
-    stack: 'Python, PyTorch, SpeechT5, LSTM, HiFi-GAN, FastAPI, TORGO',
-    repoLabel: 'Github',
-    description:
-      'A speech-generation system designed to restore natural, personalised voice output for ALS patients using dysarthric speech adaptation and speaker-aware synthesis.'
-  },
-  {
-    title: 'Pulse Analytics Dashboard',
-    type: 'Data Visualization',
-    stack: 'TypeScript, React, D3, Node.js, PostgreSQL',
-    repoLabel: 'Github',
-    description:
-      'A real-time analytics workspace that turns operational data into clear trends, alerts, and decision-ready reports for growing teams.'
-  },
-  {
-    title: 'Campus Connect',
-    type: 'Mobile Application',
-    stack: 'React Native, Expo, Firebase, TypeScript',
-    repoLabel: 'Github',
-    description:
-      'A student community app for discovering campus events, joining interest groups, and keeping up with opportunities nearby.'
-  },
-  {
-    title: 'GreenRoute',
-    type: 'Full Stack Platform',
-    stack: 'Next.js, Python, FastAPI, PostgreSQL, Docker',
-    repoLabel: 'Github',
-    description:
-      'A route-planning platform that compares travel options by time, cost, and estimated emissions to make everyday journeys more sustainable.'
-  }
-]
+const projects = projectList.map((project) => ({
+  slug: project.slug,
+  title: project.title,
+  type: project.type,
+  stack: project.stack,
+  liveLink: project.primaryLink.href.startsWith('http') ? project.primaryLink.href : undefined,
+  githubLink: project.secondaryLink.href.startsWith('http') ? project.secondaryLink.href : undefined,
+  repoLabel: 'Github',
+  description: project.summary,
+}))
 
 function ParallaxPreview({ children, initialX }: { children: ReactNode; initialX: number }) {
   return (
@@ -108,6 +75,9 @@ function ProjectsPage() {
                             <p className="mt-1 text-sm font-medium uppercase tracking-[0.12em] opacity-75">{project.type}</p>
                           </div>
                           <div className="flex flex-wrap items-center gap-2 text-sm opacity-80">
+                            <a href={`/projects/${project.slug}`} className="link link-primary">
+                              Details
+                            </a>
                             {project.liveLink && (
                               <a href={project.liveLink} target="_blank" rel="noreferrer" className="link link-primary">
                                 Live
@@ -172,6 +142,9 @@ function ProjectsPage() {
                             <p className="mt-1 text-sm font-medium uppercase tracking-[0.12em] opacity-75">{project.type}</p>
                           </div>
                           <div className="flex flex-wrap items-center gap-2 text-sm opacity-80">
+                            <a href={`/projects/${project.slug}`} className="link link-primary">
+                              Details
+                            </a>
                             {project.liveLink && (
                               <a href={project.liveLink} target="_blank" rel="noreferrer" className="link link-primary">
                                 Live

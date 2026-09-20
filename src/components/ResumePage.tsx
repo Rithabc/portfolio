@@ -1,7 +1,7 @@
 import '../App.css'
 
 function ResumePage() {
-  const resumeImageSrc = `${import.meta.env.BASE_URL}resume_page-0001.jpg`
+  const resumeImageSrc = `${import.meta.env.BASE_URL}resume.jpg`
   const resumePdfSrc = `${import.meta.env.BASE_URL}resume.pdf`
 
   return (

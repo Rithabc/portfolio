@@ -1,39 +1,50 @@
 [
   {
-    "slug": "ats-screener",
-    "title": "ATS Screener",
-    "year": "2026",
-    "status": "Actively maintained",
-    "kicker": "Your resume vs. enterprise ATS engines",
-    "summary": "A free, open-source resume scanner that shows how different ATS engines parse, filter, and score a resume.",
-    "description": "A polished project-page template for future portfolio entries. The content is structured so each section can be expanded later without changing the layout.",
-    "primaryLink": {
-      "label": "Live",
-      "href": "#"
-    },
-    "secondaryLink": {
-      "label": "Source",
-      "href": "#"
-    },
-    "thirdLink": {
-      "label": "Docs",
-      "href": "#"
-    },
+    "slug": "readers-circle",
+    "title": "The Reader's Circle",
+    "year": "2025",
+    "status": "Live",
+    "kicker": "A social home for people who read deeply",
+    "summary": "A collaborative reading platform for discovering books, sharing reviews, and building a personal reading life with other readers.",
+    "description": "The Reader's Circle brings discovery, discussion, and personal shelves into one focused reading experience. The product combines a Java and Spring backend with a React and TypeScript frontend.",
+    "type": "Java Full Stack",
+    "stack": "Java, Spring Boot, Spring Cloud, MySQL, React, TypeScript",
+    "primaryLink": { "label": "Live project", "href": "https://the-reader-s-circle.onrender.com/home" },
+    "secondaryLink": { "label": "Source", "href": "https://github.com/Rithabc/The-Reader-s-Circle" },
+    "thirdLink": { "label": "Case study", "href": "/projects/readers-circle" },
     "stats": [
-      { "value": "2,739", "label": "users served" },
-      { "value": "6", "label": "real ATS engines" }
+      { "value": "Full stack", "label": "product build" },
+      { "value": "6", "label": "core technologies" }
+    ],
+    "previewImage": "readers-circle",
+    "previewAlt": "The Reader's Circle landing page",
+    "sections": [
+      { "title": "The idea", "body": "The platform gives readers a place to find their next book, share a point of view, and keep a record of what they have read." },
+      { "title": "The build", "body": "The application uses Spring Boot and Spring Cloud, MySQL for persistence, and a React and TypeScript interface designed around quick browsing." }
+    ]
+  },
+  {
+    "slug": "voice-cloning-als",
+    "title": "Voice Cloning for ALS Patients",
+    "year": "2025",
+    "status": "Research project",
+    "kicker": "Preserving identity through personalized speech synthesis",
+    "summary": "A speech-generation system designed to restore natural, personalized voice output for ALS patients using dysarthric speech adaptation and speaker-aware synthesis.",
+    "description": "This machine learning project explores how personalized speech technology can support people whose natural voice is changing. The pipeline combines dysarthric speech data, speaker adaptation, and neural vocoding.",
+    "type": "Machine Learning",
+    "stack": "Python, PyTorch, SpeechT5, LSTM, HiFi-GAN, FastAPI, TORGO",
+    "primaryLink": { "label": "Project overview", "href": "/projects/voice-cloning-als" },
+    "secondaryLink": { "label": "Source", "href": "https://github.com/" },
+    "thirdLink": { "label": "Research notes", "href": "/projects/voice-cloning-als" },
+    "stats": [
+      { "value": "SpeechT5", "label": "synthesis model" },
+      { "value": "TORGO", "label": "speech dataset" }
     ],
     "previewImage": "hero",
-    "previewAlt": "ATS Screener project preview",
+    "previewAlt": "Abstract layered project preview",
     "sections": [
-      {
-        "title": "Overview",
-        "body": "Swap this text later with the full story, architecture, and outcome metrics for the project."
-      },
-      {
-        "title": "What to add later",
-        "body": "Features, stack, screenshots, lessons learned, links, and deployment notes can all live in this JSON record."
-      }
+      { "title": "The challenge", "body": "Dysarthric speech can make communication difficult while still carrying the qualities that make a person's voice recognizable." },
+      { "title": "The approach", "body": "The system combines speaker-aware adaptation with sequence modeling and neural vocoding. FastAPI exposes the inference workflow behind an application interface." }
     ]
   }
 ]

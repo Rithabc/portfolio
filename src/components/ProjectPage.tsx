@@ -2,6 +2,7 @@ import '../App.css'
 import { Link, Navigate, useParams } from 'react-router-dom'
 import projectList from '../data/projects.json'
 import heroPreview from '../assets/hero.png'
+import readersCirclePreview from '../assets/readers-circle.png'
 
 type ProjectSection = {
   title: string
@@ -21,6 +22,8 @@ type ProjectRecord = {
   kicker: string
   summary: string
   description: string
+  type: string
+  stack: string
   primaryLink: { label: string; href: string }
   secondaryLink: { label: string; href: string }
   thirdLink: { label: string; href: string }
@@ -33,6 +36,7 @@ type ProjectRecord = {
 const projects = projectList as ProjectRecord[]
 const previewImages: Record<string, string> = {
   hero: heroPreview,
+  'readers-circle': readersCirclePreview,
 }
 
 function ProjectPage() {

@@ -71,6 +71,7 @@
 .home-hero-shell {
   min-height: calc(100vh - 5rem);
   display: flex;
+  flex-direction: column;
   align-items: center;
   padding: 2rem 0 2.5rem;
 }
@@ -82,6 +83,66 @@
   grid-template-columns: minmax(0, 1.3fr) minmax(320px, 0.7fr);
   align-items: center;
   gap: 2rem;
+}
+
+.home-tech-marquee {
+  width: 100%;
+  display: grid;
+  gap: 0.8rem;
+  margin-top: auto;
+  padding-top: 2rem;
+}
+
+.home-tech-marquee-label {
+  width: min(1400px, calc(100% - 8rem));
+  margin: 0 auto;
+  color: hsl(var(--bc) / 0.55);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.home-tech-marquee-window {
+  width: 100%;
+  overflow: hidden;
+  border-top: 1px solid hsl(var(--bc) / 0.12);
+  border-bottom: 1px solid hsl(var(--bc) / 0.12);
+  mask-image: linear-gradient(90deg, transparent, black 8%, black 92%, transparent);
+}
+
+.home-tech-marquee-track {
+  display: flex;
+  width: max-content;
+  animation: home-tech-marquee 32s linear infinite;
+}
+
+.home-tech-item {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 8rem;
+  padding: 1.35rem 1.8rem;
+  color: hsl(var(--bc) / 0.68);
+  white-space: nowrap;
+}
+
+.home-tech-item svg {
+  width: 3rem;
+  height: 3rem;
+  fill: currentColor;
+}
+
+@keyframes home-tech-marquee {
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .home-tech-marquee-track {
+    animation-play-state: paused;
+  }
 }
 
 .home-copy {
@@ -209,6 +270,10 @@
   .home-type-panel {
     order: 2;
     min-height: 16rem;
+  }
+
+  .home-tech-marquee-label {
+    width: calc(100% - 2rem);
   }
 }
 

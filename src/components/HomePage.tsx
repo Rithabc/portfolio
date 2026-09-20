@@ -1,5 +1,28 @@
 import TypingWords from './TypingWords'
 import { motion } from 'motion/react'
+import { Link } from 'react-router-dom'
+import {
+  siCplusplus,
+  siCss,
+  siHtml5,
+  siJavascript,
+  siNodedotjs,
+  siPython,
+  siReact,
+  siTypescript,
+  type SimpleIcon
+} from 'simple-icons'
+
+const technologies: { name: string; icon: SimpleIcon }[] = [
+  { name: 'JavaScript', icon: siJavascript },
+  { name: 'TypeScript', icon: siTypescript },
+  { name: 'React', icon: siReact },
+  { name: 'Python', icon: siPython },
+  { name: 'C++', icon: siCplusplus },
+  { name: 'HTML5', icon: siHtml5 },
+  { name: 'CSS', icon: siCss },
+  { name: 'Node.js', icon: siNodedotjs }
+]
 
 const heroContainerVariants = {
   hidden: { opacity: 0 },
@@ -63,12 +86,12 @@ function HomePage() {
           </motion.p>
 
           <motion.div className="home-actions" variants={heroItemVariants}>
-            <a href="/projects" className="home-cta home-cta-primary">
+            <Link to="/projects" className="home-cta home-cta-primary">
               See the work <span aria-hidden="true">→</span>
-            </a>
-            <a href="/resume" className="home-cta">
+            </Link>
+            <Link to="/resume" className="home-cta">
               Résumé <span aria-hidden="true">↗</span>
-            </a>
+            </Link>
           </motion.div>
         </motion.section>
 
@@ -78,6 +101,26 @@ function HomePage() {
           </div>
         </motion.section>
       </motion.div>
+
+      <section className="home-tech-marquee" aria-label="Technologies">
+        <div className="home-tech-marquee-label">Working with</div>
+        <div className="home-tech-marquee-window">
+          <div className="home-tech-marquee-track">
+            {[...technologies, ...technologies].map(({ name, icon }, index) => (
+              <div
+                key={`${name}-${index}`}
+                className="home-tech-item"
+                aria-label={name}
+                aria-hidden={index >= technologies.length}
+              >
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d={icon.path} />
+                </svg>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
     </main>
   )
 }
