@@ -1,6 +1,7 @@
 import '../App.css'
 import { type ReactNode } from 'react'
 import { motion } from 'motion/react'
+import { Link } from 'react-router-dom'
 import readersCircleImage from '../assets/readers-circle.png'
 import projectList from '../data/projects.json'
 
@@ -75,9 +76,9 @@ function ProjectsPage() {
                             <p className="mt-1 text-sm font-medium uppercase tracking-[0.12em] opacity-75">{project.type}</p>
                           </div>
                           <div className="flex flex-wrap items-center gap-2 text-sm opacity-80">
-                            <a href={`/projects/${project.slug}`} className="link link-primary">
+                            <Link to={`/projects/${project.slug}`} className="link link-primary">
                               Details
-                            </a>
+                            </Link>
                             {project.liveLink && (
                               <a href={project.liveLink} target="_blank" rel="noreferrer" className="link link-primary">
                                 Live
@@ -142,9 +143,9 @@ function ProjectsPage() {
                             <p className="mt-1 text-sm font-medium uppercase tracking-[0.12em] opacity-75">{project.type}</p>
                           </div>
                           <div className="flex flex-wrap items-center gap-2 text-sm opacity-80">
-                            <a href={`/projects/${project.slug}`} className="link link-primary">
+                            <Link to={`/projects/${project.slug}`} className="link link-primary">
                               Details
-                            </a>
+                            </Link>
                             {project.liveLink && (
                               <a href={project.liveLink} target="_blank" rel="noreferrer" className="link link-primary">
                                 Live
