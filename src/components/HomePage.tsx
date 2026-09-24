@@ -60,7 +60,7 @@ function HomePage() {
       >
         <motion.section className="home-copy" variants={heroContainerVariants}>
           <motion.div variants={heroItemVariants}>
-            <div className="aura aura-dual inline-block w-fit text-orange-600">
+            <div className="aura aura-dual inline-block w-fit text-[#51362f]">
               <div className="card card-compact w-fit bg-base-100 text-base-content">
                 <div className="card-body px-4 py-2">
                   <div className="home-eyebrow">Open to software roles</div>

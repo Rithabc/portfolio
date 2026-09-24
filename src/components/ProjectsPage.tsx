@@ -2,8 +2,36 @@ import '../App.css'
 import { type ReactNode } from 'react'
 import { motion } from 'motion/react'
 import { Link } from 'react-router-dom'
+import {
+  siFastapi,
+  siGit,
+  siMysql,
+  siNumpy,
+  siOllama,
+  siOpencv,
+  siPython,
+  siPytorch,
+  siReact,
+  siSpring,
+  siTypescript,
+  type SimpleIcon,
+} from 'simple-icons'
 import readersCircleImage from '../assets/readers-circle.png'
 import projectList from '../data/projects.json'
+
+const stackIconMap: Record<string, SimpleIcon> = {
+  FastAPI: siFastapi,
+  Git: siGit,
+  MySQL: siMysql,
+  NumPy: siNumpy,
+  Ollama: siOllama,
+  OpenCV: siOpencv,
+  Python: siPython,
+  PyTorch: siPytorch,
+  React: siReact,
+  Spring: siSpring,
+  TypeScript: siTypescript,
+}
 
 const projects = projectList.map((project) => ({
   slug: project.slug,
@@ -14,7 +42,30 @@ const projects = projectList.map((project) => ({
   githubLink: project.secondaryLink.href.startsWith('http') ? project.secondaryLink.href : undefined,
   repoLabel: 'Github',
   description: project.summary,
+  stackIcons: project.stackIcons,
 }))
+
+function StackIcons({ technologies }: { technologies: string[] }) {
+  return (
+    <div className="mb-4 flex flex-wrap items-center gap-3" aria-label="Technology icons">
+      {technologies.map((technology) => {
+        const icon = stackIconMap[technology]
+
+        if (!icon) {
+          return null
+        }
+
+        return (
+          <span key={technology} className="tooltip" data-tip={technology}>
+            <svg className="size-5" viewBox="0 0 24 24" aria-label={technology} role="img">
+              <path d={icon.path} />
+            </svg>
+          </span>
+        )
+      })}
+    </div>
+  )
+}
 
 function ParallaxPreview({ children, initialX }: { children: ReactNode; initialX: number }) {
   return (
@@ -76,11 +127,15 @@ function ProjectsPage() {
                             <p className="mt-1 text-sm font-medium uppercase tracking-[0.12em] opacity-75">{project.type}</p>
                           </div>
                           <div className="flex flex-wrap items-center gap-2 text-sm opacity-80">
-                            <Link to={`/projects/${project.slug}`} className="link link-primary">
+                            <Link to={`/projects/${project.slug}`} className="btn btn-primary">
                               Details
                             </Link>
                             {project.liveLink && (
-                              <a href={project.liveLink} target="_blank" rel="noreferrer" className="link link-primary">
+                              <a href={project.liveLink} target="_blank" rel="noreferrer" className="btn">
+                                <span className="inline-grid *:[grid-area:1/1]" aria-hidden="true">
+                                  <span className="status status-success animate-ping" />
+                                  <span className="status status-success" />
+                                </span>
                                 Live
                               </a>
                             )}
@@ -95,6 +150,7 @@ function ProjectsPage() {
                           </div>
                         </div>
 
+                        <StackIcons technologies={project.stackIcons} />
                         <p className="mb-4 text-sm opacity-80">{project.stack}</p>
                         <p className="text-base leading-relaxed opacity-80">{project.description}</p>
                       </motion.div>
@@ -143,11 +199,15 @@ function ProjectsPage() {
                             <p className="mt-1 text-sm font-medium uppercase tracking-[0.12em] opacity-75">{project.type}</p>
                           </div>
                           <div className="flex flex-wrap items-center gap-2 text-sm opacity-80">
-                            <Link to={`/projects/${project.slug}`} className="link link-primary">
+                            <Link to={`/projects/${project.slug}`} className="btn btn-primary">
                               Details
                             </Link>
                             {project.liveLink && (
-                              <a href={project.liveLink} target="_blank" rel="noreferrer" className="link link-primary">
+                              <a href={project.liveLink} target="_blank" rel="noreferrer" className="btn">
+                                <span className="inline-grid *:[grid-area:1/1]" aria-hidden="true">
+                                  <span className="status status-success animate-ping" />
+                                  <span className="status status-success" />
+                                </span>
                                 Live
                               </a>
                             )}
@@ -162,6 +222,7 @@ function ProjectsPage() {
                           </div>
                         </div>
 
+                        <StackIcons technologies={project.stackIcons} />
                         <p className="mb-4 text-sm opacity-80">{project.stack}</p>
                         <p className="text-base leading-relaxed opacity-80">{project.description}</p>
                       </motion.div>

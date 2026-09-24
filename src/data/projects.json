@@ -6,9 +6,10 @@
     "status": "Live",
     "kicker": "A social home for people who read deeply",
     "summary": "A collaborative reading platform for discovering books, sharing reviews, and building a personal reading life with other readers.",
-    "description": "The Reader's Circle brings discovery, discussion, and personal shelves into one focused reading experience. The product combines a Java and Spring backend with a React and TypeScript frontend.",
+    "description": "The Reader's Circle brings book discovery, thoughtful discussion, and personal shelves into one welcoming reading space. Its Java and Spring backend powers a React and TypeScript frontend designed to make browsing, sharing, and keeping track of your reading feel effortless.",
     "type": "Java Full Stack",
     "stack": "Java, Spring Boot, Spring Cloud, MySQL, React, TypeScript",
+    "stackIcons": ["Spring", "MySQL", "React", "TypeScript"],
     "primaryLink": { "label": "Live project", "href": "https://the-reader-s-circle.onrender.com/home" },
     "secondaryLink": { "label": "Source", "href": "https://github.com/Rithabc/The-Reader-s-Circle" },
     "thirdLink": { "label": "Case study", "href": "/projects/readers-circle" },
@@ -19,8 +20,9 @@
     "previewImage": "readers-circle",
     "previewAlt": "The Reader's Circle landing page",
     "sections": [
-      { "title": "The idea", "body": "The platform gives readers a place to find their next book, share a point of view, and keep a record of what they have read." },
-      { "title": "The build", "body": "The application uses Spring Boot and Spring Cloud, MySQL for persistence, and a React and TypeScript interface designed around quick browsing." }
+      { "title": "The idea", "body": "The platform gives readers a place to find their next book, share a point of view, and keep a record of what they have read. Discovery, discussion, and personal shelves work together instead of living in separate tools." },
+      { "title": "The build", "body": "The application uses Spring Boot and Spring Cloud, MySQL for persistence, and a React and TypeScript interface designed around quick browsing. The architecture keeps the reading experience simple while giving each part of the product a clear responsibility." },
+      { "title": "The experience", "body": "Readers can move from finding a title to exploring reviews and saving it to a personal shelf without losing context. The interface is organized for scanning, with focused book information and social details appearing exactly when they are useful." }
     ]
   },
   {
@@ -33,6 +35,7 @@
     "description": "This machine learning project explores how personalized speech technology can support people whose natural voice is changing. The pipeline combines dysarthric speech data, speaker adaptation, and neural vocoding.",
     "type": "Machine Learning",
     "stack": "Python, PyTorch, SpeechT5, LSTM, HiFi-GAN, FastAPI, TORGO",
+    "stackIcons": ["Python", "PyTorch", "FastAPI"],
     "primaryLink": { "label": "Project overview", "href": "/projects/voice-cloning-als" },
     "secondaryLink": { "label": "Source", "href": "https://github.com/" },
     "thirdLink": { "label": "Research notes", "href": "/projects/voice-cloning-als" },
@@ -45,6 +48,58 @@
     "sections": [
       { "title": "The challenge", "body": "Dysarthric speech can make communication difficult while still carrying the qualities that make a person's voice recognizable." },
       { "title": "The approach", "body": "The system combines speaker-aware adaptation with sequence modeling and neural vocoding. FastAPI exposes the inference workflow behind an application interface." }
+    ]
+  },
+  {
+    "slug": "commitgen-lora",
+    "title": "CommitGen LoRA: AI Git Hook",
+    "year": "2025",
+    "status": "Local-first tool",
+    "kicker": "Conventional commits generated privately from staged code",
+    "summary": "An AI Git hook that writes conventional commit messages from a staged diff using a locally hosted, LoRA fine-tuned Qwen 2.5 Coder model.",
+    "description": "CommitGen LoRA reads the staged diff and recent commit history when you run git commit, then pre-fills the commit editor with a message such as fix(auth): handle expired token on refresh. The complete workflow runs offline, so source code never leaves your machine.",
+    "type": "Developer Tool",
+    "stack": "Python, PyTorch, Unsloth, PEFT/LoRA, Qwen 2.5 Coder, GGUF, Ollama, Git hooks",
+    "stackIcons": ["Python", "PyTorch", "Ollama", "Git"],
+    "primaryLink": { "label": "Project overview", "href": "/projects/commitgen-lora" },
+    "secondaryLink": { "label": "Source", "href": "https://github.com/" },
+    "thirdLink": { "label": "Training notes", "href": "/projects/commitgen-lora" },
+    "stats": [
+      { "value": "5.7MB", "label": "GGUF adapter" },
+      { "value": "Offline", "label": "local inference" }
+    ],
+    "previewImage": "hero",
+    "previewAlt": "Abstract preview for CommitGen LoRA",
+    "sections": [
+      { "title": "The workflow", "body": "The Python hook collects the staged diff and recent commit history, sends a compact prompt to Qwen 2.5 Coder through Ollama, validates the generated conventional commit, and opens the editor with the result." },
+      { "title": "The training", "body": "I fine-tuned the model with QLoRA using Unsloth on a curated dataset of code diffs and commit messages, then exported the adapter to a compact 5.7MB GGUF artifact." },
+      { "title": "The guardrails", "body": "Diff truncation keeps prompts bounded, output validation prevents malformed messages, and a fallback to Git's default message keeps committing available when Ollama is not running." }
+    ]
+  },
+  {
+    "slug": "offside-detection",
+    "title": "Offside Detection Using Computer Vision",
+    "year": "2025",
+    "status": "Research project",
+    "kicker": "Perspective-aware football analysis from one broadcast image",
+    "summary": "Detects offside players in football images using pitch-line vanishing points and jersey-color team assignment, built with OpenCV and geometry rather than a trained model.",
+    "description": "This project decides whether attacking players are offside in a single football match image. Because broadcast cameras view the pitch at an angle, the pipeline corrects perspective before comparing player positions against the last defender.",
+    "type": "Computer Vision",
+    "stack": "Python, OpenCV, NumPy, Hough transform, HSV color segmentation, perspective geometry",
+    "stackIcons": ["Python", "OpenCV", "NumPy"],
+    "primaryLink": { "label": "Project overview", "href": "/projects/offside-detection" },
+    "secondaryLink": { "label": "Source", "href": "https://github.com/" },
+    "thirdLink": { "label": "Method notes", "href": "/projects/offside-detection" },
+    "stats": [
+      { "value": "CV", "label": "classical vision" },
+      { "value": "1", "label": "broadcast image" }
+    ],
+    "previewImage": "hero",
+    "previewAlt": "Abstract preview for football offside detection",
+    "sections": [
+      { "title": "Team and goal direction", "body": "Players are grouped into teams from pose annotations. The defending jersey color identifies the defending side, while the goalkeeper's position provides the goal direction." },
+      { "title": "Vanishing-point geometry", "body": "An adaptive HSV green mask isolates the pitch. Canny edges and a Hough transform find pitch markings, whose filtered pairwise intersections are averaged to estimate the vertical vanishing point." },
+      { "title": "Projection and decision", "body": "Each player's point closest to the goal line is projected along a line through the vanishing point. Those projections are compared with the last defender, then rendered with player outlines, the last-man line, offside lines, and labels." }
     ]
   }
 ]
