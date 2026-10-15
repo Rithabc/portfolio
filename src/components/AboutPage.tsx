@@ -12,7 +12,7 @@ const toolkit = ['React', 'TypeScript', 'Python', 'C++', 'Node.js', 'FastAPI', '
 
 function AboutPage() {
   return (
-    <main className="about-page mx-auto max-w-7xl px-4 py-12 sm:px-8 lg:px-12">
+    <main className="about-page mx-auto min-w-0 max-w-7xl overflow-x-hidden px-4 py-12 sm:px-8 lg:px-12">
       <section className="hero min-h-[32rem] rounded-box bg-base-200 px-4 py-12 shadow-sm sm:px-10 lg:px-16">
         <motion.div
           className="hero-content grid w-full max-w-none gap-12 p-0 lg:grid-cols-[1.15fr_0.85fr]"
@@ -80,15 +80,17 @@ function AboutPage() {
         </div>
       </section>
 
-      <section className="grid gap-8 py-20 lg:grid-cols-[0.7fr_1.3fr]" aria-labelledby="about-toolkit-title">
+      <section className="grid gap-8 py-20" aria-labelledby="about-toolkit-title">
         <div>
           <div className="badge badge-ghost">03 / TOOLS</div>
           <h2 id="about-toolkit-title" className="mt-4 text-4xl font-black tracking-tight sm:text-5xl">A practical toolkit.</h2>
         </div>
-        <div className="stats stats-vertical border border-base-content/10 bg-base-100 shadow-sm sm:stats-horizontal">
-          <div className="stat"><div className="stat-title">Frontend</div><div className="stat-value text-primary">React</div><div className="stat-desc">TypeScript · UI systems</div></div>
-          <div className="stat"><div className="stat-title">Backend</div><div className="stat-value text-secondary">Python</div><div className="stat-desc">Node.js · FastAPI · SQL</div></div>
-          <div className="stat"><div className="stat-title">Core</div><div className="stat-value">C++</div><div className="stat-desc">Git · APIs · systems</div></div>
+        <div className="stats stats-vertical w-full min-w-0 max-w-full overflow-hidden border border-base-content/10 bg-base-100 shadow-sm sm:stats-horizontal">
+          <div className="stat min-w-0"><div className="stat-title">Language</div><div className="stat-value text-primary">Java</div><div className="stat-desc">Object-oriented development</div></div>
+          <div className="stat min-w-0"><div className="stat-title">Focus</div><div className="stat-value text-accent">AI</div><div className="stat-desc">Intelligent product ideas</div></div>
+          <div className="stat min-w-0"><div className="stat-title">Language</div><div className="stat-value text-secondary">Python</div><div className="stat-desc">Automation · APIs · data</div></div>
+          <div className="stat min-w-0"><div className="stat-title">Language</div><div className="stat-value">C</div><div className="stat-desc">Systems · memory · performance</div></div>
+          <div className="stat min-w-0"><div className="stat-title">Frontend</div><div className="stat-value text-primary">React</div><div className="stat-desc">Interactive web experiences</div></div>
         </div>
       </section>
     </main>
