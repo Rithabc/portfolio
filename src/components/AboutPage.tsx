@@ -8,8 +8,6 @@ const principles = [
   ['03', 'Make the trade-off visible', 'Simple, maintainable decisions beat clever ones. I document the why so the work can keep moving.'],
 ]
 
-const toolkit = ['React', 'TypeScript', 'Python', 'C++', 'Node.js', 'FastAPI', 'SQL', 'Git']
-
 function AboutPage() {
   return (
     <main className="about-page mx-auto min-w-0 max-w-7xl overflow-x-hidden px-4 py-12 sm:px-8 lg:px-12">
