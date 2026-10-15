@@ -3,9 +3,9 @@ import { Link } from 'react-router-dom'
 import heroAsset from '../assets/hero.png'
 
 const principles = [
-  ['01', 'Start with the person', 'Good software begins with a clear picture of who needs it and what should feel easier afterward.'],
-  ['02', 'Go deep when it matters', 'I enjoy tracing a problem through the interface, the API, the data, and the system underneath.'],
-  ['03', 'Make the trade-off visible', 'Simple, maintainable decisions beat clever ones. I document the why so the work can keep moving.'],
+  ['01', 'Think with purpose', 'The best solutions come from asking better questions, understanding the details, and turning complexity into clarity.'],
+  ['02', 'Build with intelligence', 'I value thoughtful decisions, continuous learning, and technology that makes products more useful and reliable.'],
+  ['03', 'Work better together', 'Great work grows from open communication, shared ownership, and a team that makes room for every perspective.'],
 ]
 
 function AboutPage() {
@@ -27,7 +27,7 @@ function AboutPage() {
             </p>
             <div className="flex flex-wrap gap-3">
               <Link to="/projects" className="btn btn-primary">See my work <span aria-hidden="true">↗</span></Link>
-              <a href="mailto:rithvika.sapalia@gmail.com" className="btn btn-outline">Say hello <span aria-hidden="true">→</span></a>
+              <a href="mailto:rithvikasapalya@gmail.com" className="btn btn-outline">Say hello <span aria-hidden="true">→</span></a>
             </div>
           </div>
 
@@ -85,7 +85,7 @@ function AboutPage() {
         </div>
         <div className="stats stats-vertical w-full min-w-0 max-w-full overflow-hidden border border-base-content/10 bg-base-100 shadow-sm sm:stats-horizontal">
           <div className="stat min-w-0"><div className="stat-title">Language</div><div className="stat-value text-primary">Java</div><div className="stat-desc">Object-oriented development</div></div>
-          <div className="stat min-w-0"><div className="stat-title">Focus</div><div className="stat-value text-accent">AI</div><div className="stat-desc">Intelligent product ideas</div></div>
+          <div className="stat min-w-0"><div className="stat-title">Focus</div><div className="stat-value text-accent">ML</div><div className="stat-desc">Intelligent product ideas</div></div>
           <div className="stat min-w-0"><div className="stat-title">Language</div><div className="stat-value text-secondary">Python</div><div className="stat-desc">Automation · APIs · data</div></div>
           <div className="stat min-w-0"><div className="stat-title">Language</div><div className="stat-value">C</div><div className="stat-desc">Systems · memory · performance</div></div>
           <div className="stat min-w-0"><div className="stat-title">Frontend</div><div className="stat-value text-primary">React</div><div className="stat-desc">Interactive web experiences</div></div>

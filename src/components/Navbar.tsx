@@ -80,7 +80,7 @@ function Navbar() {
         </NavLink>
         <MotionNavLink
           className="btn btn-outline btn-neutral navbar-contact-link relative"
-          to="/resume"
+          to="/contact"
           onClick={() => setConfettiBurst((burst) => burst + 1)}
           whileHover="hovered"
           whileTap={{ scale: 0.96 }}

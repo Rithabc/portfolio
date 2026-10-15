@@ -8,6 +8,7 @@ import HomePage from './components/HomePage'
 import ProjectsPage from './components/ProjectsPage.tsx'
 import ProjectPage from './components/ProjectPage'
 import ResumePage from './components/ResumePage'
+import ContactPage from './components/ContactPage'
 
 function App() {
   const location = useLocation()
@@ -18,6 +19,7 @@ function App() {
       '/about': 'Rithvika • About',
       '/projects': 'Rithvika • Projects',
       '/resume': 'Rithvika • Resume',
+      '/contact': 'Rithvika • Contact',
     }
 
     if (location.pathname === '/') {
@@ -56,6 +58,7 @@ function App() {
           <Route path="/projects" element={<ProjectsPage />} />
           <Route path="/projects/:slug" element={<ProjectPage />} />
           <Route path="/resume" element={<ResumePage />} />
+          <Route path="/contact" element={<ContactPage />} />
           <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
       </motion.div>
