@@ -64,7 +64,6 @@ function ContactPage() {
               <div className="badge badge-ghost">01 / DETAILS</div>
               <h2 id="contact-details-title" className="mt-4 text-4xl font-black tracking-tight sm:text-5xl">Find me here.</h2>
             </div>
-            <span className="hidden text-sm text-base-content/50 sm:block">Replace the template details with your own.</span>
           </div>
 
           <div className="grid gap-4 sm:grid-cols-2">
