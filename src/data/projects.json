@@ -10,7 +10,7 @@
     "type": "Java Full Stack",
     "stack": "Java, Spring Boot, Spring Cloud, MySQL, React, TypeScript",
     "stackIcons": ["Spring", "MySQL", "React", "TypeScript"],
-    "primaryLink": { "label": "Live project", "href": "https://the-reader-s-circle.onrender.com/home" },
+    "primaryLink": { "label": "Live project", "href": "https://the-reader-s-circle.onrender.com" },
     "secondaryLink": { "label": "Source", "href": "https://github.com/Rithabc/The-Reader-s-Circle" },
     "thirdLink": { "label": "Case study", "href": "/projects/readers-circle" },
     "stats": [
