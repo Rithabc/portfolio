@@ -1,46 +1,94 @@
-import '../App.css'
+import { motion } from 'motion/react'
 import { Link } from 'react-router-dom'
+import heroAsset from '../assets/hero.png'
+
+const principles = [
+  ['01', 'Start with the person', 'Good software begins with a clear picture of who needs it and what should feel easier afterward.'],
+  ['02', 'Go deep when it matters', 'I enjoy tracing a problem through the interface, the API, the data, and the system underneath.'],
+  ['03', 'Make the trade-off visible', 'Simple, maintainable decisions beat clever ones. I document the why so the work can keep moving.'],
+]
+
+const toolkit = ['React', 'TypeScript', 'Python', 'C++', 'Node.js', 'FastAPI', 'SQL', 'Git']
 
 function AboutPage() {
   return (
-    <main className="project-page">
-      <section className="project-hero">
-        <div className="project-back-link-wrap">
-          <Link className="project-back-link" to="/">
-            ← Home
-          </Link>
-        </div>
+    <main className="about-page mx-auto max-w-7xl px-4 py-12 sm:px-8 lg:px-12">
+      <section className="hero min-h-[32rem] rounded-box bg-base-200 px-4 py-12 shadow-sm sm:px-10 lg:px-16">
+        <motion.div
+          className="hero-content grid w-full max-w-none gap-12 p-0 lg:grid-cols-[1.15fr_0.85fr]"
+          initial={{ opacity: 0, y: 24 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.65, ease: [0.22, 1, 0.36, 1] }}
+        >
+          <div className="about-hero-copy flex flex-col items-start gap-6">
+            <div className="badge badge-primary badge-outline gap-2 px-4 py-3">● A little context</div>
+            <h1 className="max-w-3xl text-5xl font-black leading-[0.95] tracking-tight sm:text-7xl">Curious about how things <span className="text-primary italic">work.</span></h1>
+            <p className="max-w-2xl text-lg leading-relaxed text-base-content/75 sm:text-xl">
+              I&apos;m Rithvika Sapalya, a software developer who likes moving between the visible and invisible parts of a product.
+              I build thoughtful interfaces, dependable services, and the connective tissue between them.
+            </p>
+            <div className="flex flex-wrap gap-3">
+              <Link to="/projects" className="btn btn-primary">See my work <span aria-hidden="true">↗</span></Link>
+              <a href="mailto:rithvika.sapalia@gmail.com" className="btn btn-outline">Say hello <span aria-hidden="true">→</span></a>
+            </div>
+          </div>
 
-        <div className="project-meta-row">
-          <span className="project-year">TEMP</span>
-          <span className="project-divider" />
-          <span className="project-kicker">About page</span>
-          <span className="project-divider" />
-          <span className="project-status">● Placeholder</span>
-        </div>
-
-        <h1 className="project-title">About</h1>
-        <p className="project-summary">
-          This is a placeholder About page. You can replace this later with your bio, background, skills, and timeline.
-        </p>
+          <motion.div
+            className="card border border-base-content/10 bg-base-100 shadow-xl"
+            initial={{ opacity: 0, scale: 0.94, rotate: 2 }}
+            animate={{ opacity: 1, scale: 1, rotate: 0 }}
+            transition={{ duration: 0.8, delay: 0.12, ease: [0.22, 1, 0.36, 1] }}
+          >
+            <figure className="aspect-[4/3] overflow-hidden bg-base-300 p-6 sm:p-10"><img className="h-full w-full object-contain" src={heroAsset} alt="Layered computing hardware illustration" /></figure>
+            <div className="card-body gap-1 p-6">
+              <div className="text-xs font-bold uppercase tracking-[0.2em] text-primary">Current mode</div>
+              <h2 className="card-title">Full-stack, by instinct.</h2>
+              <p className="text-base-content/65">From the screen to the silicon.</p>
+            </div>
+          </motion.div>
+        </motion.div>
       </section>
 
-      <section className="project-detail-grid">
-        <div className="project-detail-intro">
-          <p>
-            The layout is intentionally simple for now so you can expand it later without changing the navigation or route structure.
-          </p>
+      <section className="grid gap-10 py-20 lg:grid-cols-[0.7fr_1.3fr]" aria-labelledby="about-focus-title">
+        <div>
+          <div className="badge badge-ghost">01 / NOW</div>
+          <h2 id="about-focus-title" className="mt-4 max-w-md text-4xl font-black tracking-tight sm:text-5xl">The kind of work I want more of.</h2>
         </div>
+        <div className="space-y-5 text-lg leading-relaxed text-base-content/75">
+          <p>I&apos;m especially drawn to products where the details matter: tools that make complex information easier to understand, systems that need to stay dependable under pressure, and teams that care about doing the thinking before doing the shipping.</p>
+          <p>My sweet spot is the space between product sense and technical depth. I can shape the interaction, then stay with the problem until the data model and deployment story make sense too.</p>
+        </div>
+      </section>
 
-        <div className="project-detail-panels">
-          <article className="project-detail-panel">
-            <h2>What goes here later</h2>
-            <p>Short bio, technical interests, tools, experience, and contact details.</p>
-          </article>
-          <article className="project-detail-panel">
-            <h2>Next step</h2>
-            <p>Drop in the real content when you are ready and keep the same page shell.</p>
-          </article>
+      <section className="rounded-box bg-base-200 p-6 py-12 sm:p-12" aria-labelledby="about-principles-title">
+        <div className="mb-8 flex flex-wrap items-end justify-between gap-4">
+          <div>
+            <div className="badge badge-ghost">02 / HOW</div>
+            <h2 id="about-principles-title" className="mt-4 text-4xl font-black tracking-tight sm:text-5xl">A few things I believe.</h2>
+          </div>
+        </div>
+        <div className="grid gap-4 md:grid-cols-3">
+          {principles.map(([number, title, description]) => (
+            <article className="card border border-base-content/10 bg-base-100 shadow-sm" key={number}>
+              <div className="card-body">
+                <div className="badge badge-primary badge-outline">{number}</div>
+                <h3 className="card-title mt-3">{title}</h3>
+                <p className="text-base-content/70">{description}</p>
+              </div>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section className="grid gap-8 py-20 lg:grid-cols-[0.7fr_1.3fr]" aria-labelledby="about-toolkit-title">
+        <div>
+          <div className="badge badge-ghost">03 / TOOLS</div>
+          <h2 id="about-toolkit-title" className="mt-4 text-4xl font-black tracking-tight sm:text-5xl">A practical toolkit.</h2>
+        </div>
+        <div className="stats stats-vertical border border-base-content/10 bg-base-100 shadow-sm sm:stats-horizontal">
+          <div className="stat"><div className="stat-title">Frontend</div><div className="stat-value text-primary">React</div><div className="stat-desc">TypeScript · UI systems</div></div>
+          <div className="stat"><div className="stat-title">Backend</div><div className="stat-value text-secondary">Python</div><div className="stat-desc">Node.js · FastAPI · SQL</div></div>
+          <div className="stat"><div className="stat-title">Core</div><div className="stat-value">C++</div><div className="stat-desc">Git · APIs · systems</div></div>
         </div>
       </section>
     </main>

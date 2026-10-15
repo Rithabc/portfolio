@@ -85,7 +85,7 @@ function ProjectPage() {
     <main className="project-page">
       <section className="project-hero">
         <div className="project-back-link-wrap">
-          <Link className="project-back-link" to="/">
+          <Link className="project-back-link" to="/projects">
             ← All projects
           </Link>
         </div>
